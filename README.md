@@ -1,6 +1,6 @@
 # VecJS
 Immutable functional vector library.
-Currently it only has the `Vec2` the 2D vector type. 
+Currently it only has `Vec2` the 2D vector type. 
 
 ## Installation
 `npm i vecjs`
@@ -25,6 +25,9 @@ Functions:
 | --- | --- | --- |
 | add | `(a) .add (b)` | (a.x+b.x, a.y+b.y) |
 | sub | `(a) .sub (b)` | (a.x-b.x, a.y-b.y) |
+| mul | `(a) .mul (b)` | (a.x*b.x, a.y*b.y) |
+| div | `(a) .div (b)` | { res: (a.x/b.x, a.y/b.y), err: boolean } |
+| avg | `(a) .avg (b)` | ( (a.x+b.x)/2 , (a.y+b.y)/2 ) |
 | dot | `(a) .dot (b)` | a.x*b.x + a.y*b.y |
 | max | `(a) .max (b)` | (max(a.x, b.x), max(a.y, b.y)) |
 | min | `(a) .min (b)` | (min(a.x, b.x), min(a.y, b.y)) |
@@ -32,6 +35,8 @@ Functions:
 | proj | `(a) .furrier (b)` | { res: the furrier coefficient of **a** and **b** (number), err: boolean } |
 | proj | `(a) .proj (b)` | { res: projection of **a** to the vector **b** (Vec2), err: boolean } |
 | random | `Vec2.random()` | (random between 0 and 1, random between 0 and 1) with borders |
+| null | `Vec2.null()` | (0,0) null element |
+| id | `Vec2.id()`   | (1,1) identity element |
 
 Computed properties:
 | name | example | description|
@@ -39,25 +44,15 @@ Computed properties:
 | lenSquare | `(a) .lenSquare` | a.x^2 + b.y^2 |
 | len | `(a) .len` | sqrt(a.x^2 + b.y^2) |
 | norm | `(a) .norm` | { res: (a.x/a.len , a.y/a.len), err: boolean } |
+| normal1 | `(a) .normal1` | (- a.y,   a.x) |
+| normal2 | `(a) .normal2` | (  a.y, - a.x) |
+| inverse | `(a) .inverse` | (- a.x, - a.y) |
+| sign | `(a) .sign` | (sgn(a.x), sgn(a.y)) |
+| sum | `(a) .sum` | a.x + a.y |
+| diff | `(a) .diff` | a.x - a.y |
 
 Properties:
 | name | example | description|
 | --- | --- | --- |
 | x | `(a).x` | The x coordinate |
 | y | `(a).y` | The y coordinate |
-
-## All functions can be used in prefix mode
-These are predefined for you:
-```javascript
-Vec2.add = (a, b) => (a).add(b)
-Vec2.sub = (a, b) => (a).sub(b)
-Vec2.dot = (a, b) => (a).dot(b)
-Vec2.min = (a, b) => (a).min(b)
-Vec2.max = (a, b) => (a).max(b)
-Vec2.furrier = (a, b) => (a).furrier(b)
-Vec2.proj = (a, b) => (a).proj(b)
-Vec2.map = (a, f) => a.map(f)
-Vec2.norm = (a) => (a).norm
-Vec2.lenSquare = (a) => (a).lenSquare
-Vec2.len = (a) => (a).len
-```

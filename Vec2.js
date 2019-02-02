@@ -26,7 +26,7 @@ class Vec2 {
      * @returns {Vec2} 
      */
     add(a) {
-        return new Vec2(this.x + a.x, this.y + a.y )
+        return new Vec2(this.x + a.x, this.y + a.y)
     }
 
     /**
@@ -38,6 +38,44 @@ class Vec2 {
      */
     sub(a) {
         return new Vec2(this.x - a.x, this.y - a.y)
+    }
+
+    /**
+     * 
+     * @param {Object} a 
+     * @param {number} a.x 
+     * @param {number} a.y 
+     * @returns {Vec2} 
+     */
+    mul(a) {
+        return new Vec2(this.x * a.x, this.y * a.y)
+    }
+    /**
+     * 
+     * @param {Object} a 
+     * @param {number} a.x 
+     * @param {number} a.y 
+     * @returns {{res: Vec2, err: boolean}} 
+     */
+    div(a) {
+
+        if (a.x != 0 && a.y != 0) {
+            return { res: new Vec2(this.x / a.x, this.y / a.y), err: false }
+        }
+
+        return { res: new Vec2(0, 0), err: true }
+
+    }
+
+    /**
+     * 
+     * @param {Object} a 
+     * @param {number} a.x 
+     * @param {number} a.y 
+     * @returns {Vec2} 
+     */
+    avg(a) {
+        return new Vec2((this.x + a.x) / 2, (this.y + a.y) / 2)
     }
 
     /**
@@ -115,7 +153,7 @@ class Vec2 {
         } else {
             return {
                 err: true,
-                res: new Vec2(0,0)
+                res: new Vec2(0, 0)
             }
         }
 
@@ -128,6 +166,28 @@ class Vec2 {
      */
     map(f) {
         return new Vec2(f(this.x), f(this.y))
+    }
+
+
+    /**
+     * @returns {Vec2}
+     */
+    static random() {
+        return new Vec2(Math.random(), Math.random())
+    }
+
+    /**
+     * @returns {Vec2}
+     */
+    static null() {
+        return new Vec2(0, 0)
+    }
+
+    /**
+     * @returns {Vec2}
+     */
+    static id() {
+        return new Vec2(1, 1)
     }
 
     /**
@@ -162,21 +222,47 @@ class Vec2 {
         return Math.sqrt(this.lenSquare)
     }
 
-    static random() {
-        return new Vec2(Math.random(), Math.random())
+    /**
+     * @returns {number}
+     */
+    get sum() {
+        return this.x + this.y
+    }
+
+    /**
+     * @returns {number}
+     */
+    get diff() {
+        return this.x - this.y
+    }
+
+    /**
+     * @returns {Vec2}
+     */
+    get sign() {
+        return new Vec2(Math.sign(this.x), Math.sign(this.y))
+    }
+
+    /**
+     * @returns {Vec2}
+     */
+    get normal1() {
+        return new Vec2(-this.y, this.x)
+    }
+
+    /**
+    * @returns {Vec2}
+    */
+    get normal2() {
+        return new Vec2(this.y, -this.x)
+    }
+
+    /**
+    * @returns {Vec2}
+    */
+    get inverse() {
+        return new Vec2(-this.x, -this.y)
     }
 
 }
-
-Vec2.add = (a, b) => (a).add(b)
-Vec2.sub = (a, b) => (a).sub(b)
-Vec2.dot = (a, b) => (a).dot(b)
-Vec2.min = (a, b) => (a).min(b)
-Vec2.max = (a, b) => (a).max(b)
-Vec2.furrier = (a, b) => (a).furrier(b)
-Vec2.proj = (a, b) => (a).proj(b)
-Vec2.map = (a, f) => a.map(f)
-Vec2.norm = (a) => (a).norm
-Vec2.lenSquare = (a) => (a).lenSquare
-Vec2.len = (a) => (a).len
 module.exports = Vec2
