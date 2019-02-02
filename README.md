@@ -21,6 +21,7 @@ console.log(res)
 ```
 
 Functions:
+
 | name | example | description|
 | --- | --- | --- |
 | add | `(a) .add (b)` | (a.x+b.x, a.y+b.y) |
@@ -39,6 +40,7 @@ Functions:
 | id | `Vec2.id()`   | (1,1) identity element |
 
 Computed properties:
+
 | name | example | description|
 | --- | --- | --- |
 | lenSquare | `(a) .lenSquare` | a.x^2 + b.y^2 |
@@ -52,6 +54,7 @@ Computed properties:
 | diff | `(a) .diff` | a.x - a.y |
 
 Properties:
+
 | name | example | description|
 | --- | --- | --- |
 | x | `(a).x` | The x coordinate |
