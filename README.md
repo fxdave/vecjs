@@ -2,6 +2,9 @@
 Immutable functional vector library.
 Currently it only has the `Vec2` the 2D vector type. 
 
+## Installation
+`npm i vecjs`
+
 ## Usage
 
 Usage is simple and readable:
@@ -28,6 +31,7 @@ Functions:
 | map | `(a) .map (x => x*2)` | (f(a.x), f(b.x)) |
 | proj | `(a) .furrier (b)` | { res: the furrier coefficient of **a** and **b** (number), err: boolean } |
 | proj | `(a) .proj (b)` | { res: projection of **a** to the vector **b** (Vec2), err: boolean } |
+| random | `Vec2.random()` | (random between 0 and 1, random between 0 and 1) with borders |
 
 Computed properties:
 | name | example | description|
@@ -57,23 +61,3 @@ Vec2.norm = (a) => (a).norm
 Vec2.lenSquare = (a) => (a).lenSquare
 Vec2.len = (a) => (a).len
 ```
-
-## Tests
-basic operations
-    ✓ tests (a) .add (b)
-    ✓ tests (a) .sub (b)
-    ✓ tests (a) .dot (b)
-    ✓ tests (a) .max (b)
-    ✓ tests (a) .min (b)
-    ✓ tests (a) .map (function)
-    ✓ tests (a) .lenSquare
-    ✓ tests (a) .len
-    furrier
-      ✓ tests (a) .furrier (b)
-      ✓ tests error of (a) .furrier (b)
-    projection
-      ✓ tests (a) .proj (b)
-      ✓ tests error of (a) .proj (b)
-    normal form
-      ✓ tests (a) .norm
-      ✓ tests error of (a) .norm
