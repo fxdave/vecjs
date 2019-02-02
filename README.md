@@ -1,6 +1,6 @@
 # VecJS
 Immutable functional vector library.
-Currently it only has `Vec2` the 2D vector type. 
+Currently it only has `Vec2` the best 2D vector type. 
 
 ## Installation
 `npm i vecjs`
