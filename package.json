@@ -1,0 +1,27 @@
+{
+  "name": "vecjs",
+  "version": "0.1.0",
+  "description": "Immutable vector library",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha *.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fxdave/vecjs.git"
+  },
+  "keywords": [
+    "vector",
+    "immutable",
+    "rich"
+  ],
+  "author": "David Judge (David Biró)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fxdave/vecjs/issues"
+  },
+  "homepage": "https://github.com/fxdave/vecjs#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
