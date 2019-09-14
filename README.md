@@ -35,7 +35,7 @@ Functions:
 | max | `(a) .max (b)` | (max(a.x, b.x), max(a.y, b.y)) |
 | min | `(a) .min (b)` | (min(a.x, b.x), min(a.y, b.y)) |
 | map | `(a) .map (x => x*2)` | (f(a.x), f(b.x)) |
-| proj | `(a) .furrier (b)` | { res: the furrier coefficient of **a** and **b** (number), err: boolean } |
+| furrier | `(a) .furrier (b)` | { res: the furrier coefficient of **a** and **b** (number), err: boolean } |
 | proj | `(a) .proj (b)` | { res: projection of **a** to the vector **b** (Vec2), err: boolean } |
 | random | `Vec2.random()` | (random between 0 and 1, random between 0 and 1) with borders |
 | null | `Vec2.null()` | (0,0) null element |
