@@ -1,8 +1,6 @@
 # VecJS
 Immutable functional vector library.
-Currently it only has `Vec2` the 2D vector type. 
-
-Related to the others, I think Vec2 is the best 2D vector library out for javascript.
+Currently it only has `Vec2` the 2D vector type.
 
 ## Installation
 `npm i vecjs`

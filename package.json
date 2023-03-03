@@ -2,7 +2,8 @@
   "name": "vecjs",
   "version": "1.1.1",
   "description": "Immutable vector library",
-  "main": "index.js",
+  "main": "./index.js",
+  "types": "./types/index.d.ts",
   "scripts": {
     "test": "mocha *.test.js"
   },
@@ -27,6 +28,7 @@
   },
   "homepage": "https://github.com/fxdave/vecjs#readme",
   "devDependencies": {
+    "typescript": "^4.9.5",
     "mocha": "^10.2.0"
   }
 }
